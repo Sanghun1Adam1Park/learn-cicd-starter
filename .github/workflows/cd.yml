@@ -41,3 +41,6 @@ jobs:
       - name: Build and push Docker image
         run: gcloud builds submit --tag europe-west4-docker.pkg.dev/omega-winter-488918-n7/notely-ar-repo/sanghunpark0628/notely:latest .
 
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image europe-west4-docker.pkg.dev/omega-winter-488918-n7/notely-ar-repo/sanghunpark0628/notely:latest --region europe-west4 --allow-unauthenticated --project omega-winter-488918-n7 --max-instances=4
+
